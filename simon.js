@@ -1,7 +1,7 @@
 let gamseq=[];
 let user=[];
 
-let btns = ["red","yellow","green","purple"]
+let btns = ["r","y","g","p"]
 
 let started=false;
 let level = 0;
@@ -21,7 +21,11 @@ function levelup(){
     let randIdx = Math.floor(Math.random()*4);
     let randcolor = btns[randIdx];
     let randbtn = document.querySelector(`.${randcolor}`)
-    buttonflash();
+    buttonflash(randbtn);
+    // console.log(randcolor);
+    gamseq.push(randcolor);
+
+
 }
 
 function buttonflash(btn){
@@ -29,4 +33,27 @@ function buttonflash(btn){
     setTimeout(function(){
         btn.classList.remove("flash");
     },1000);
+}
+
+function userflash(btn){
+    btn.classList.add("userflash")
+    setTimeout(function(){
+        btn.classList.remove("userflash");
+    },1000);
+}
+
+function btnpress(){
+    console.log(this);
+    let btn = this;
+    userflash(btn);
+    user.push(btn);
+}
+
+let allbtns = document.querySelectorAll(".btn");
+for(btn of allbtns){
+    btn.addEventListener("click",btnpress)
+}
+
+function check(){
+    
 }

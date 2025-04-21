@@ -15,22 +15,25 @@ body{
     justify-content:center;
 }
 
-.btn.r{
+.r{
     background-color: red;
 }
 
-.btn.y{
+.y{
     background-color: yellow;
 }
-
-.btn.g{
+.g{
     background-color: green;
 }
 
-.btn.p{
+.p{
     background-color: purple;
 }
 
 .flash{
     background-color: white;
+}
+
+.userflash{
+    background-color: rgb(0, 0, 255);
 }
